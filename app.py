@@ -11,9 +11,9 @@ merdao = 404
 def hello_world():
     return  "deu bom, gerasss o/'"
 
-@app.route("/page/teste")
-def page():
-    return render_template("page.html")
+@app.route("/page/teste/<nome>")
+def page(nome):
+    return render_template("page.html", nome=nome)
 
 @app.route("/<nome>")
 def index(nome):
