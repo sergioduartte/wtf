@@ -1,9 +1,9 @@
 # coding: utf-8
 from flask import Flask
 from flask import render_template
-#from flask import jsonify
+from flask import jsonify
 
-app = Flask("/wtf") #, template_folder='./templates')
+app = Flask("/wtf")
 
 @app.route("/")
 def hello_world():
@@ -29,7 +29,7 @@ def imprime(algumaCoisa=None, nome=None):
     if algumaCoisa == "jooj":
         return "iae essa galera! Teste.<br><strong>I'm learning Flask!!</strong>", 200
     return "acho que deu certo", 200
-'''
+
 def json_api():
     pessoas = [{"nome": "Sérgio Duarte"},
                 {"nome": "Icaro Jooj"},
@@ -37,7 +37,7 @@ def json_api():
                 {"nome": "Joaber Cloud Boe"},
                 {"nome": "Kaio Supernerd"}]
     return jsonify(pessoas=pessoas, total=len(pessoas))
-'''
+
     
 
 app.run(debug=True, use_reloader=True) #mudar para false antes do deploy
